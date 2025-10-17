@@ -137,7 +137,114 @@ After the raw data is ingested into the data lake, the processing layer is ready
 
 2. In the Function overview section, review to ensure that S3 is listed as the function trigger.
 3. Goto code tab
+4. Then goto configuration tab and choose environment variables
+
+<img width="1527" height="162" alt="{4092DA7A-B42F-4E1D-B99B-687DDC1C3FA6}" src="https://github.com/user-attachments/assets/85886973-38da-40bf-8c1e-c025f68759f7" />
+
+5. Replace values in input and output bucket
+
+6. Goto functions sections and choose generator
+
+7. Click on test to see the transformation results
+
+******************************* Output ****************************************
+
+Status: Succeeded
+Test Event Name: TestEvent
+
+Response:
+null
+
+Function Logs:
+START RequestId: dsgsdgsgs-dsfdsgdsg-zvzv-dsgss-xbbsbbs Version: $LATEST
+cart_id  customer_id  product_id  product_amount product_price
+0        3            7          10              15    $95,636.60
+1        3            5           1              16        $62.33
+2        6            0           3               1    $29,635.06
+3        2            9           3              15    $49,297.85
+4        4            8           9              14        $21.07
+END RequestId: safafaf-xbfsbffsb-afafaf-b2\c\c\ec-vzvvdv
+REPORT RequestId: bgngfngn-ngdndggngn-adfcaf-afafa-srggeee	Duration: 5580.44 ms	Billed Duration: 8128 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	Init Duration: 2546.85 ms
+
+Request ID: xvxvx-grgr-sdgsg-gsdsd-GSGGSSEREWR
+
+### Task 4.2: Review data in the consumption zone S3 bucket
+
+Goto S3, export to review the dataset
+
+## STEP 5: Review Consumption layer of Data Lake
+
+### Task 5.1: Create an Amazon EventBridge rule
+
+<img width="717" height="208" alt="{2F1E4553-2DD8-4829-A107-2559E652BE49}" src="https://github.com/user-attachments/assets/7084722b-5194-4b24-a4d3-3475a91a314c" />
+
+1. Click on create rule
+
+<img width="1141" height="631" alt="{D05C38D7-5FBC-4537-8F6E-E43D539ECAAE}" src="https://github.com/user-attachments/assets/bc059f5b-fd68-422e-9719-88065d9e9e0b" />
+
+2. Choose rule type and click next
+3. Build event pattern
+
+<img width="1154" height="545" alt="{3D3AD6BE-10BE-4B4F-A9E8-B95E23FF23FA}" src="https://github.com/user-attachments/assets/e07bc2cc-9822-4f2b-a061-6eab3ee9c9bf" />
+
+4. Select event pattern
+
+<img width="1124" height="674" alt="{1DA43920-AD11-458E-9B69-47BDCEB870A2}" src="https://github.com/user-attachments/assets/7f4c840b-ef9a-4890-a17e-56b87660deac" />
+
+5. Event source = AWS Services, AWS Service = Simple Storage Service (S3), Event Type = Amazon S3 Event Notification and review the Event Pattern
+
+<img width="1126" height="581" alt="{83248207-11E8-49DE-9EB2-40823AA46D1F}" src="https://github.com/user-attachments/assets/3378c075-9712-444d-8efb-3f6ca8697736" />
+
+
+*********************************** OUTPUT *************************************
+
+
+{
+  "source": ["aws.s3"],
+  "detail-type": ["Object Access Tier Changed", "Object ACL Updated", "Object Created", "Object Deleted", "Object Restore Completed", "Object Restore Expired", "Object Restore Initiated", "Object Storage Class Changed", "Object Tags Added", "Object Tags Deleted"]
+}
+
+6. Choose Event Type Specification 1 = Specific Event (select object created), Event Type Specification 2 = Specific buckets(s) by name (add your raw bucket name)
+
+<img width="568" height="526" alt="{6E0D70DE-C7C3-41E6-9D42-547A4B6DD772}" src="https://github.com/user-attachments/assets/acb6f408-3d4c-4af8-9959-b5266e286218" />
+
+7. Select target(s)
+
+<img width="1128" height="771" alt="{0BD0E611-FA09-440C-85DD-56B67CC7B7C4}" src="https://github.com/user-attachments/assets/1a087f64-213a-4fcc-b62b-7d3812396829" />
+
+8. Select target -> Lambda function, Function -> Choose function, Under Permissions uncheck Use execution role (recommended) and click next
+9. Configure tags (optional)
+10. Review and create, review event pattern
+
+****************************** Example ******************************
+{
+  "source": ["aws.s3"],
+  "detail-type": ["Object Created"],
+  "detail": {
+    "bucket": {
+      "name": ["raw-bucket-rr-eee-1-dDaaaaaaaaaaa"]
+    }
+  }
+}
+
+11. Create rule
+
+### Task 5.2: Configure the labFunction-Promotion-App function
+
+1. Goto lambda and in functions sections choose the xxxxxx-prom-app
+2. Review the function overview and confirm does EventBridge appears in trigger
+
+<img width="1222" height="446" alt="{13A92EFE-A68C-40E3-9235-B1FC8A464309}" src="https://github.com/user-attachments/assets/8ba2ea76-d1ab-48c3-873e-586879e54896" />
+
+3. Scroll down to code
 4. 
+
+
+
+
+
+
+
 
 
 
