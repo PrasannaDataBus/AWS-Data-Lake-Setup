@@ -75,6 +75,74 @@ I will review the injestion layer of the data lake solution
 <img width="467" height="163" alt="{D5E69150-1D11-45CD-9451-8DB0616B14DB}" src="https://github.com/user-attachments/assets/e2dffd91-f8a2-4ac2-9ca6-a3c51962714f" />
 
 2. In the functions section -> choose xxxxx-xxxx-generator -> you will see code tab
+3. Review index.py script
+4. After choose configuration tab
+
+<img width="1520" height="227" alt="{791D72C1-323B-4F26-BDBA-AD04CE86130C}" src="https://github.com/user-attachments/assets/343346fd-6c61-4611-ad5c-c45697e6e33d" />
+
+5. Click on environment variables
+
+<img width="1536" height="206" alt="{2EA11A45-6D97-4DF6-8B78-F8C6C5FBE230}" src="https://github.com/user-attachments/assets/ec590fb1-3561-4197-83df-5d1a05e82ff5" />
+
+6. You need to add or replace in environment variable and save
+
+7. Choose code tab and test
+
+<img width="454" height="594" alt="{B7EFFE2E-D331-42C2-A6F1-F2C946D52343}" src="https://github.com/user-attachments/assets/7441e6bd-9498-4cd4-970e-88b0356a8c88" />
+
+8. Create or search your event
+
+<img width="751" height="90" alt="{9A1699A6-40FF-477F-B895-2546C20AB769}" src="https://github.com/user-attachments/assets/f12be661-2f0d-4c28-bc9a-9eb71d3712dd" />
+
+9. If created new event, configure and save ot
+
+<img width="701" height="469" alt="{EA1047FF-E9F4-43F6-A26B-B1328DBF47A9}" src="https://github.com/user-attachments/assets/1f023390-5e0d-416e-8022-261f61d88610" />
+
+10. Run the test event
+
+**************************************** OUTPUT *************************************
+Status: Succeeded
+Test Event Name: TestEvent
+
+Response:
+null
+
+Function Logs:
+START RequestId: xxx-rrr-hhh-ooo-vvv Version: $LATEST
+cart_id  customer_id  product_id  product_amount product_price
+0        8            4           9              19         $3.43
+1        1            4          10               7        $12.83
+2        1            5           5               5        $75.79
+3        9            0           8              10     $4,785.77
+4        2            3           4               5       $861.11
+END RequestId: safafaf-erwerwe-sdgdsgsg-34324-gfhtryt
+REPORT RequestId: affewfew-FGDFGGERG-hhfdhf-asdasd-bdfgh	Duration: 5494.37 ms	Billed Duration: 7866 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	Init Duration: 2371.63 ms
+
+Request ID: sdfewfewf-sgdsggs-gsgsdg-wrrrer-DDSSDGDG
+
+### Task 3.2: Review data in the raw zone S3 bucket
+
+1. Goto S3 and you will see the raw injested data. Check the box in the objects tab
+2. You will also be able to download the dataset to review
+
+## Step 4: Review the processing layer for your data lake solution
+
+After the raw data is ingested into the data lake, the processing layer is ready to start transforming the data and sending it to the consumption zone S3 bucket.
+
+### Task 4.1: Configure the labFunction-Data-xxxxxx Lambda function
+
+1. Goto lambda and chosoe the processor function
+
+<img width="1232" height="439" alt="{58B47C09-6F34-4A5D-AE4C-AC91AEC86E00}" src="https://github.com/user-attachments/assets/36f65916-59fc-4d14-86db-181127324aca" />
+
+2. In the Function overview section, review to ensure that S3 is listed as the function trigger.
+3. Goto code tab
+4. 
+
+
+
+
+
 
 
 
