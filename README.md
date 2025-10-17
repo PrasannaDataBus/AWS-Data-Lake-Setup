@@ -237,7 +237,50 @@ Goto S3, export to review the dataset
 <img width="1222" height="446" alt="{13A92EFE-A68C-40E3-9235-B1FC8A464309}" src="https://github.com/user-attachments/assets/8ba2ea76-d1ab-48c3-873e-586879e54896" />
 
 3. Scroll down to code
-4. 
+4. Goto configuration tab and choose environment variables -> edit -> provdie input and output bucket details and click save
+5. Goto functions and in code space test your event
+
+********************************** Output *************************************
+Status: Succeeded
+Test Event Name: TestEvent
+
+Response:
+null
+
+Function Logs:
+START RequestId: fsdff-3434-dfffwfwee-fdzfsd-fsfssddsdsf Version: $LATEST
+cart_id  customer_id  product_id  product_amount product_price
+0        9            6           2               7       $936.75
+1        4           10           0               1     $2,937.08
+2        0            6          10              16        $21.47
+3        0            8           1              14         $7.36
+4        6            4           1              13    $22,136.00
+END RequestId: fsfdsffdsdsfsd-3244141-faaa-fffdafaf-faffdffesewwe
+REPORT RequestId: fsfsdffsfsdf-423432-ffsdfsfsd-fsdfsdfs-fddsfdsfdsfs	Duration: 5271.58 ms	Billed Duration: 7564 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	Init Duration: 2292.01 ms
+
+Request ID: csadfesf-324324-sdfdsffds-fsdfsd-xcvzxzvzvvzv
+
+### Task 5.3: Review data in the consumption zone S3 bucket
+
+Goto S3 and review your work.
+
+Note: The company can use this data to identify the top few products that customers leave in shopping carts, and then offer promotional discounts for these products.
+
+## Conclusion
+
+I have successfully done the following:
+
+- Used Amazon S3 as the storage layer of a data lake.
+- Organized data into layers (or zones) in Amazon S3.
+- Configured an S3 event notification to invoke an AWS Lambda function.
+- Created an Amazon EventBridge rule to invoke the Lambda function.
+
+References:
+
+[What is AWS Lambda?](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+[What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+[[What Is Amazon EventBridge?](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)]]
+
 
 
 
