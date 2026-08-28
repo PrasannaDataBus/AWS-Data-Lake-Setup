@@ -281,6 +281,14 @@ References:
 [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
 [[What Is Amazon EventBridge?](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)]]
 
+## 🛡️ Copyright & Compliance Notice
+
+© 2026 PrasannaDataBus. All rights reserved. This repository and its contents are intended solely for self learning and portfolio demonstration purposes.
+
+All screenshots, configuration snippets, and architecture diagrams related to Amazon Web Services (AWS) are used under fair use for illustrative and informational purposes only. AWS, the AWS logo, AWS Services and all related marks are trademarks of Amazon Web Services, Inc. or its affiliates.
+
+No proprietary AWS data, credentials, or customer information are included. Do not reuse or redistribute any part of this repository without explicit permission from the author.
+
 
 
 
